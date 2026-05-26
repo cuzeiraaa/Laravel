@@ -19,6 +19,24 @@ Route::prefix('/aluno')->group(function(){
     Route::get('/index', [App\Http\Controllers\AlunoController::class, 'index'])->name('aluno.index');
     Route::post('/add', [App\Http\Controllers\AlunoController::class, 'add'])->name('aluno.add');
 }); 
+Route::prefix('/curso')->group(function(){
+    Route::get('/index', [App\Http\Controllers\CursoController::class, 'index'])->name('curso.index');
+    Route::post('/add', [App\Http\Controllers\CursoController::class, 'add'])->name('curso.add');
+}); 
+Route::prefix('/professor')->group(function(){
+    Route::get('/index', [App\Http\Controllers\ProfessorController::class, 'index'])->name('professor.index');
+    Route::post('/add', [App\Http\Controllers\ProfessorController::class, 'add'])->name('professor.add');
+}); 
+Route::prefix('/componente')->group(function(){
+    Route::get('/index', [App\Http\Controllers\ComponenteController::class, 'index'])->name('compo.index');
+    Route::post('/add', [App\Http\Controllers\ComponenteController::class, 'add'])->name('compo.add');
+}); 
+Route::prefix('/admin')->group(function(){
+    Route::get('/index', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+    Route::post('/add', [App\Http\Controllers\AdminController::class, 'add'])->name('admin.add');
+}); 
+
+
 
 
 
