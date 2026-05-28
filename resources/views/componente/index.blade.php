@@ -23,7 +23,7 @@
             <br>
             <h3>{{ $comp->hora_fim }}</h3>
             <br>
-            <h3>{{ $comp->hora_incio }}</h3>
+            <h3>{{ $comp->hora_inicio }}</h3>
         @endforeach
     @endisset
 </div>
