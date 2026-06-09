@@ -21,6 +21,7 @@ Route::prefix('/aluno')->group(function(){
     Route::get('/remove/{id}', [App\Http\Controllers\AlunoController::class, 'remove'])->name('aluno.remove');
     Route::get('/atualizar/{id}', [App\Http\Controllers\AlunoController::class, 'atualizar'])->name('aluno.update');
     Route::post('/save', [App\Http\Controllers\AlunoController::class, 'save'])->name('aluno.save');
+    
 
 
 }); 

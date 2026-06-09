@@ -17,6 +17,22 @@ class AlunoController extends Controller
     }
 
     public function add(Request $data) {
+
+        $validador = Validator::make(
+            $dados->all(),
+                [
+                    'nome' => 'required|min:3|max::255',
+                ],
+                [
+                    'nome.required' => 'o nome é obrigatório',
+                    'nome.max' => 'O campo nome deve conter no mínimo 3 caracteres.',
+                    'nome.min' => 'O campo nome deve conter no máximo 255 caracteres.',
+                ]
+                );
+
+        if($validador->fails()){
+            return redirect()->route('aluno.index')->withErrors($validador)->withInput();
+        }
         
         $aluno = new AlunoModel();
         $aluno::create($data->all());
