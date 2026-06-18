@@ -67,7 +67,7 @@ class AlunoController extends Controller
 
         $aluno->update($dados->all());
 
-        return view('aluno.index', ['success'=>'Atualizado!', 'alunos'=>$aluno::all()]);
+        return view('aluno.index', ['success'=>'So sucesso!', 'alunos'=>$aluno::all()]);
     }
 
 
