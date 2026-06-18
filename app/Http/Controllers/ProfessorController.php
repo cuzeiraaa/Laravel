@@ -18,8 +18,38 @@ class ProfessorController extends Controller
         $prof = new ProfessorModel();
         $prof::create($data->all());
 
-        $profs = new ProfessorModel();
 
-        return view('professor.index', ['success' => 'Cadastrado!', 'profs' => $profs::all()]);
+        return view('professor.index', ['success' => 'Cadastrado!', 'profs' => $prof::all()]);
+    }
+
+    public function remove(string $id)
+    {
+        $prof = new ProfessorModel();
+
+        $prof::destroy($id);
+
+        return view('professor.index', ['success' => 'Removido!', 'profs' => $prof::all()]);
+
+    }
+
+    public function atualizar(string $id)
+    {
+        $prof = new ProfessorModel();
+        $prof = $prof->find($id);
+
+        return view('professor.atualizar', [ 'prof' => $prof]);
+
+    }
+
+    public function save(Request $request)
+    {
+        $prof = new ProfessorModel();
+
+        $prof = $prof::find($request->id);
+
+        $prof->update($request->all());
+
+        return view('professor.index', ['success' => 'Atualizado!', 'profs' => $prof::all()]);
+
     }
 }

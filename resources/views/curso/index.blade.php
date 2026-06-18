@@ -29,12 +29,14 @@
                             <h3>{{ $curso->periodo }}</h3>
                         </td>
                         <td>
-                            <form action="{{ route('aluno.remove', ['id' => $aluno->id]) }}">
+                            <form action="{{ route('curso.remove', ['id' => $curso->id]) }}">
                                 <button type="submit">Remover</button>
                             </form>
                         </td>
                         <td>
-                            <button type="submit">Atualizar</button>
+                            <form action="{{ route('curso.atualizar', ['id' => $curso->id]) }}" method="get">
+                                <button type="submit">Atualizar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

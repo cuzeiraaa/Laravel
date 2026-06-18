@@ -17,13 +17,35 @@
         @endisset
     </form>
 
-    @isset($profs)
-        @foreach ($profs as $prof)
-            <h3>{{ $prof->nome }}</h3>
-            <br>
-            <h3>{{ $prof->email }}</h3>
-            <br>
-            <h3>{{ $prof->telefone }}</h3>
-        @endforeach
-    @endisset
+    <table border="1">
+        <tr>
+            <td>Nome do Professor</td>
+            <td colspan="2">Ações</td>
+        </tr>
+        @isset($profs)
+                @foreach($profs as $prof)
+                    <tr>
+                        <td>
+                            <h3>{{ $prof->nome }}</h3>
+                        </td>
+                        <td>
+                            <h3>{{ $prof->email }}</h3>
+                        </td>
+                        <td>
+                            <h3>{{ $prof->telefone }}</h3>
+                        </td>
+                        <td>
+                            <form action="{{ route('professor.remove', ['id' => $prof->id]) }}">
+                                <button type="submit">Remover</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('professor.atualizar', ['id' => $prof->id]) }}" method="get">
+                                <button type="submit">Atualizar</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+        @endisset
+    </table>
 </div>

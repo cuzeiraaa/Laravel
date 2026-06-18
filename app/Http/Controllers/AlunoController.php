@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AlunoModel;
+use Illuminate\Support\Facades\Validator;
+
 
 class AlunoController extends Controller
 {
@@ -19,7 +21,7 @@ class AlunoController extends Controller
     public function add(Request $data) {
 
         $validador = Validator::make(
-            $dados->all(),
+            $data->all(),
                 [
                     'nome' => 'required|min:3|max::255',
                 ],
