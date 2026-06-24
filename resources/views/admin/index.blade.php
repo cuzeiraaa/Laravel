@@ -15,6 +15,9 @@
         <label for="nome">USUARIO</label>
         <input type="text" name="usuario" id="usuario">
 
+        <label for="status">STATUS</label>
+        <input type="text" name="status" id="status">
+
         <label for="nome">SENHA</label>
         <input type="text" name="senha" id="senha">
         

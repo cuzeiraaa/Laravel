@@ -23,12 +23,12 @@ class AlunoController extends Controller
         $validador = Validator::make(
             $data->all(),
                 [
-                    'nome' => 'required|min:3|max::255',
+                    'nome' => 'required|min:3|max:255',
                 ],
                 [
-                    'nome.required' => 'o nome é obrigatório',
-                    'nome.max' => 'O campo nome deve conter no mínimo 3 caracteres.',
-                    'nome.min' => 'O campo nome deve conter no máximo 255 caracteres.',
+                    'nome.required' => 'O nome é obrigatório.',
+                    'nome.min' => 'O campo nome deve conter no mínimo 3 caracteres.',
+                    'nome.max' => 'O campo nome deve conter no máximo 255 caracteres.',
                 ]
                 );
 
